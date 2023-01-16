@@ -3,13 +3,10 @@ import '../styles/generatorForm.css'
 
 
 class GeneratorForm extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
     render() {
 
-        const { handleChange, handleClick, formData } = this.props;
+        const { handleChange, handleClickGetNewImage, handleClickApplyTexts, formData } = this.props;
 
         return (
             <form>
@@ -32,10 +29,17 @@ class GeneratorForm extends React.Component {
                         placeholder="LOWER TEXT">
                     </input>
                 </div>
-                <button
-                    onClick={handleClick}
-                    className="generator-form--btn "> Get a new meme image
-                </button>
+                <div class="input--container">
+                    <button
+                        onClick={handleClickGetNewImage}
+                        className="generator-form--btn "> Get a new meme image
+                    </button>
+                    <button
+                        id="apply-texts-button"
+                        onClick={handleClickApplyTexts}
+                        className="generator-form--btn ">Apply Texts
+                    </button>
+                </div>
             </form>
         )
     }

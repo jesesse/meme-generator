@@ -25,6 +25,7 @@ form {
 }
 
 .generator-form--btn {
+    width: 45%;
     background-image: linear-gradient(to left, rgb(155, 29, 155), rgb(50, 8, 82));
     border: 2px solid rgba(128, 128, 128, 0.463);
     font-size: 1.2rem;
@@ -32,6 +33,11 @@ form {
     border-radius: 10px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.557);
     cursor: pointer;
+}
+
+
+#apply-texts-button{
+    background-image: linear-gradient(to right, rgb(155, 29, 155), rgb(50, 8, 82));
 }
 
 .generator-form--btn:hover {

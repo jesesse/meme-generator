@@ -6,9 +6,8 @@ const Meme = (props) => {
     return (
         <div className="meme-container">
             <img src={props.url} className="meme--img" alt="meme"/>
-            <p className="upper-text">{props.upperText}</p>
-            <p className="lower-text">{props.lowerText}</p>
-
+            <p className="upper-text">{props.texts.upperText}</p>
+            <p className="lower-text">{props.texts.lowerText}</p>
         </div>
     )
 }
