@@ -8,39 +8,51 @@ import GeneratorForm from './components/GeneratorForm';
 const App = () => {
 
   const memeArray = memeData.data.memes;
-  const randomUrl = memeArray[Math.floor(Math.random() * memeArray.length)].url
-  const [url, setUrl] = React.useState(randomUrl)
-  const [upperText, setUpperText] = React.useState("")
-  const [lowerText, setLowerText] = React.useState("")
-
-  const getRandomMeme = (e) => {
-    e.preventDefault();
-    const randomUrl = memeArray[Math.floor(Math.random() * memeArray.length)].url
-    setUrl(randomUrl)
+  const getRandomUrl = () => {
+    return memeArray[Math.floor(Math.random() * memeArray.length)].url
   }
+
+  const [randomMeme, setRandomMeme] = React.useState({ url: getRandomUrl(), upperText: "", lowerText: "" })
 
   const handleChange = (e) => {
-    if (e.target.id === "upper") setUpperText(e.target.value);
-    if (e.target.id === "lower") setLowerText(e.target.value);
+    const { name, value } = e.target;
+    setRandomMeme((prevRandomMeme) => {
+      return {
+        ...prevRandomMeme,
+        [name]: value
+      }
+    })
+  }
+
+  const generateMeme = (e) => {
+    e.preventDefault();
+    const newUrl = getRandomUrl();
+    setRandomMeme((prevRandomMeme) => {
+      return {
+        ...prevRandomMeme,
+        url: newUrl
+      }
+    })
   }
 
 
-    return (
-      <div className='container'>
-        <Header/>
-        <GeneratorForm
-          handleChange={handleChange}
-          handleClick={getRandomMeme}
-        />
-        <Meme
-          url={url}
-          upperText={upperText}
-          lowerText={lowerText}
-        />
-      </div>
-   
-    )
-  
+  return (
+    <div className='container'>
+      <Header />
+      <GeneratorForm
+        handleChange={handleChange}
+        handleClick={generateMeme}
+        formData={randomMeme}
+      />
+      <Meme
+        url={randomMeme.url}
+        upperText={randomMeme.upperText}
+        lowerText={randomMeme.lowerText}
+      />
+    </div>
+
+  )
+
 }
 
 export default App;
