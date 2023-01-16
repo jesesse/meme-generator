@@ -1,0 +1,31 @@
+.meme-container{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    position: relative;
+    padding:0px 70px 70px 70px
+}
+
+.meme--img{
+    width: 100%;
+}
+
+.upper-text{
+    font-size: 5rem;
+    font-weight: 900;
+    text-shadow: 0 0 5px black;
+    position: absolute;
+    top:0;
+}
+
+.lower-text {
+   
+    font-size: 5rem;
+    font-weight: 900;
+    text-shadow: 0 0 5px black;
+    position: absolute;
+    bottom: 0;
+}
+
+

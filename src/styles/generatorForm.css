@@ -1,0 +1,42 @@
+form {
+    padding: 100px 70px;
+    display: flex;
+    align-items: stretch;
+    flex-flow: column;
+    gap: 40px;
+}
+
+.input--container {
+    justify-content: space-between;
+    display: flex;
+}
+
+.generator-form--input {
+    color: black;
+    border: 2px solid rgba(128, 128, 128, 0.463);
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 5px;
+    width: 45%;
+}
+
+.generator-form--input::placeholder {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.generator-form--btn {
+    background-image: linear-gradient(to left, rgb(155, 29, 155), rgb(50, 8, 82));
+    border: 2px solid rgba(128, 128, 128, 0.463);
+    font-size: 1.2rem;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.557);
+    cursor: pointer;
+}
+
+.generator-form--btn:hover {
+    background-image: linear-gradient(to left, rgb(142, 35, 142), rgb(46, 6, 77));
+    border: 2px solid rgba(154, 148, 148, 0.463);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.636);
+    cursor: pointer;
+}
