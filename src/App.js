@@ -1,20 +1,14 @@
 import React from 'react';
 import Header from './components/Header';
 import Meme from './components/Meme';
-import memeData from './memeData';
 import './App.css';
 import GeneratorForm from './components/GeneratorForm';
 
 const App = () => {
 
-  const memeArray = memeData.data.memes;
-
-  const getRandomUrl = () => {
-    return memeArray[Math.floor(Math.random() * memeArray.length)].url
-  }
 
   const [randomMeme, setRandomMeme] = React.useState({ 
-    url: getRandomUrl(), 
+    url: "", 
     memeTexts: {
       upperText: "",
       lowerText:""
@@ -46,18 +40,17 @@ const App = () => {
     })
   }
 
-
-  const getImage = (e) => {
-    e.preventDefault();
-    const newUrl = getRandomUrl();
-    console.log(randomMeme)
-    setRandomMeme((prevMeme) => {
+  const handleClickApplyImage = (e) =>{
+    e.preventDefault()
+    setRandomMeme(prevMeme => {
       return {
         ...prevMeme,
-        url: newUrl
+        url: new Date().getTime()
       }
     })
   }
+
+
 
 
   return (
@@ -65,8 +58,8 @@ const App = () => {
       <Header />
       <GeneratorForm
         handleChange={handleChange}
-        handleClickGetNewImage={getImage}
         handleClickApplyTexts={handleClickApplyTexts}
+        handleClickApplyImage={handleClickApplyImage}
         formData={texts}
       />
       <Meme

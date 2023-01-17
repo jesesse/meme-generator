@@ -6,7 +6,7 @@ class GeneratorForm extends React.Component {
 
     render() {
 
-        const { handleChange, handleClickGetNewImage, handleClickApplyTexts, formData } = this.props;
+        const { handleChange, handleClickApplyImage, handleClickApplyTexts, formData } = this.props;
 
         return (
             <form>
@@ -29,9 +29,9 @@ class GeneratorForm extends React.Component {
                         placeholder="LOWER TEXT">
                     </input>
                 </div>
-                <div class="input--container">
+                <div className="input--container">
                     <button
-                        onClick={handleClickGetNewImage}
+                        onClick={handleClickApplyImage}
                         className="generator-form--btn "> Get a new meme image
                     </button>
                     <button
